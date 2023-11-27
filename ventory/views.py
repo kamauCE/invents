@@ -103,7 +103,6 @@ def delete_product(request, barcode):
   product = get_object_or_404(Product, barcode=barcode)
 
   if request.method == 'POST':
-    # Handle the confirmation of the deletion
     product.delete()
     return redirect('all_products')
 
