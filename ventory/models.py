@@ -5,21 +5,18 @@ from django.db import models
 class Product(models.Model):
 
     NAME_CHOICES = [
-      ('Concealer','Concealer'),
-      ('Mascara','Mascara'),
-      ('Blush','Blush'),
-      ('Foundation','Foundation'),
-      ('Eye shadow','Eye shadow'),
-      ('Eye liner','Eye liner'),
-      ('Primer','Primer'),
-      ('Clinique','Clinique'),
-      ('Bronzer','Bronzer'),
-      ('Highlighter','Highlighter'),
-      ('Maybelline','Maybelline'),
-      ('Powder','Powder'),
-      ('Mosturizer','Mosturizer'),
-      ('Cream','Cream'),
-      ('Shampoo','Shampoo'),
+      ("book",'book'),
+      ("water",'water'),
+      ("plates",'plates'),
+      ("Concealer",'Concealer'),
+      ("Foundation",'Foundation'),
+      ("Eye shadow",'Eye shadow'),
+      ("Eye liner",'Eye liner'),
+      ("Bronzer",'Bronzer'),
+      ("Powder",'Powder'),
+      ("Mosturizer",'Mosturizer'),
+      ("Cream",'Cream'),
+      ("Shampoo",'Shampoo'),
     ]
 
     name = models.CharField(max_length=255, choices=NAME_CHOICES)

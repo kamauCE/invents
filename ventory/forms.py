@@ -11,21 +11,18 @@ class ProductForm(forms.ModelForm):
     fields = '__all__'
 
   NAME_CHOICES = [
-    ('Concealer', 'Concealer'),
-    ('Mascara', 'Mascara'),
-    ('Blush', 'Blush'),
-    ('Foundation', 'Foundation'),
-    ('Eye shadow', 'Eye shadow'),
-    ('Eye liner', 'Eye liner'),
-    ('Primer', 'Primer'),
-    ('Clinique', 'Clinique'),
-    ('Bronzer', 'Bronzer'),
-    ('Highlighter', 'Highlighter'),
-    ('Maybelline', 'Maybelline'),
-    ('Powder', 'Powder'),
-    ('Mosturizer', 'Mosturizer'),
-    ('Cream', 'Cream'),
-    ('Shampoo', 'Shampoo'),
+    ("book", 'book'),
+    ("water", 'water'),
+    ("plates", 'plates'),
+    ("Concealer", 'Concealer'),
+    ("Foundation", 'Foundation'),
+    ("Eye shadow", 'Eye shadow'),
+    ("Eye liner", 'Eye liner'),
+    ("Bronzer", 'Bronzer'),
+    ("Powder", 'Powder'),
+    ("Mosturizer", 'Mosturizer'),
+    ("Cream", 'Cream'),
+    ("Shampoo", 'Shampoo'),
   ]
 
   name = forms.ChoiceField(choices=NAME_CHOICES)
@@ -47,6 +44,4 @@ class CustomSignUpForm(UserCreationForm):
 
       widgets = {
         'username': forms.TextInput(attrs={'placeholder': 'Enter your username'}),
-        # 'password1': forms.PasswordInput(attrs={'placeholder': 'Enter your password'}),
-        # 'password2': forms.PasswordInput(attrs={'placeholder': 'Confirm your password'}),
       }

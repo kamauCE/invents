@@ -1,6 +1,4 @@
-# views.py
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -42,7 +40,6 @@ def all_products(request):
   products = Product.objects.all()
 
   if 'download_html' in request.GET:
-    # If the user requested to download the HTML
     html_content = render_to_string('downloadable_products.html', {'products': products})
     response = HttpResponse(html_content, content_type='text/html')
     response['Content-Disposition'] = 'attachment; filename="products_details.html"'
@@ -148,22 +145,13 @@ def cart_view(request):
   return render(request, 'cart_view.html', {'cart_items': cart_items})
 
 
-# def handlesignup(request):
-#   if request.method == 'POST':
-#     username = request.POST.get("username")
-#     password = request.POST.get("password")
-#
-#     myuser = User.objects.create_user(username, password)
-#     myuser.save()
-#   return render(request, 'signup.html')
-
 def signup(request):
     if request.method == 'POST':
       form = CustomSignUpForm(request.POST)
       if form.is_valid():
         user = form.save()
         login(request, user)
-        return redirect('handlelogin')  # Redirect to your desired page after successful signup
+        return redirect('handlelogin')
     else:
       form = CustomSignUpForm()
 
